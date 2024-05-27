@@ -25,11 +25,11 @@ export class LivroDadosComponent {
     this.editoras = [];
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.editoras = this.servEditora.getEditoras();
   }
 
-  incluir = (): void => {
+  incluir = () => {
     this.livro.autores = this.autoresForm
     .split('\n') //separa os autores em substrings pela quebra de linha
     .filter(autor => autor.trim() !== ''); // remove espaços vazios dos autores

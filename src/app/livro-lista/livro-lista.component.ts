@@ -18,12 +18,12 @@ export class LivroListaComponent {
     private servLivros: ControleLivrosService
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.editoras = this.servEditora.getEditoras();
     this.livros = this.servLivros.obterLivros();
   }
 
-  excluir = (codigo: number): void => {
+  excluir = (codigo: number) => {
     this.servLivros.excluir(codigo);
     this.livros = this.servLivros.obterLivros();
   }
