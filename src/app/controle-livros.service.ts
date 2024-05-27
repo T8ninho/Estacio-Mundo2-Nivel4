@@ -42,7 +42,6 @@ export class ControleLivrosService {
     const novoCodigo = Math.max(...this.livros.map(l => l.codigo)) + 1;
     livro.codigo = novoCodigo;
     this.livros.push(livro);
-    // console.log(livro)
   }
 
   excluir(codigo: number): void {

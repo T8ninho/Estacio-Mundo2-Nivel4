@@ -20,7 +20,7 @@ export class LivroDadosComponent implements OnInit {
     private servLivros: ControleLivrosService,
     private router: Router
   ) {
-    this.livro = new Livro(0, 0, '', '', []);
+    this.livro = new Livro();
     this.autoresForm = '';
     this.editoras = [];
   }
