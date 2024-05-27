@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Livro } from './Livro';
-import { Editora } from './Editora';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class ControleLivrosService {
-  editoras: Editora[] = [];
   private livros: Array<Livro> = [
     {
       codigo: 1,
@@ -38,16 +35,13 @@ export class ControleLivrosService {
     return this.livros;
   }
 
-  incluir(livro: Livro): void {
+  incluir(livro: Livro) {
     const novoCodigo = Math.max(...this.livros.map(l => l.codigo)) + 1;
     livro.codigo = novoCodigo;
     this.livros.push(livro);
   }
 
-  excluir(codigo: number): void {
-    const index = this.livros.findIndex(l => l.codigo === codigo);
-    if (index !== -1) {
-      this.livros.splice(index, 1);
-    }
+  excluir(codigo: number) {
+      this.livros.splice(this.livros.findIndex(l => l.codigo === codigo), 1);
   }
 }

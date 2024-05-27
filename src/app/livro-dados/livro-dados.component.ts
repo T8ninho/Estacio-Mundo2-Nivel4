@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Livro } from '../Livro';
 import { Editora } from '../Editora';
@@ -10,7 +10,7 @@ import { ControleLivrosService } from '../controle-livros.service';
   templateUrl: './livro-dados.component.html',
   styleUrls: ['./livro-dados.component.css']
 })
-export class LivroDadosComponent implements OnInit {
+export class LivroDadosComponent {
   public livro: Livro;
   public autoresForm: string;
   public editoras: Array<Editora>;

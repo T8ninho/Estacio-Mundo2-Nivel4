@@ -20,12 +20,10 @@ import { ControleLivrosService } from './controle-livros.service';
     FormsModule
   ],
   providers: [
-    ControleEditoraService, 
+    ControleEditoraService,
     ControleLivrosService
   ],
-  bootstrap: [
-    AppComponent
-  ]
+  bootstrap: [AppComponent]
 })
 
 export class AppModule { }
