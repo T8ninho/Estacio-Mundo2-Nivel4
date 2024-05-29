@@ -4,6 +4,7 @@ import { Livro } from './Livro';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ControleLivrosService {
   private livros: Array<Livro> = [
     {
@@ -27,6 +28,13 @@ export class ControleLivrosService {
       resumo: "O doutor Simão Bacamarte funda um hospício na pequena Itaguaí. Mas suas ideias sobre loucura são tão inflexíveis que ele interna a cidade inteira. Uma das mais irônicas e sombrias histórias de Machado de Assis.",
       autores: ["Machado de Assis"],
     },
+    {
+      codigo: 4,
+      codEditora: 4,
+      titulo: 'Magisterium: O desafio de ferro (Vol. 1)',
+      resumo: 'Callum Hunt precisa enfrentar o Desafio de Ferro. Um teste para os potenciais alunos do Magisterium, uma renomada escola de magia. Todo mundo faria tudo para ser aceito, mas não Callum. Após tudo que o seu pai lhe contou sobre o lado sombrio da magia, Call está decidido a falhar na prova.',
+      autores: ['Cassandra Clare','Holly Black']
+    }
 ];
 
   constructor() {}
@@ -36,7 +44,8 @@ export class ControleLivrosService {
   }
 
   incluir(livro: Livro) {
-    const novoCodigo = Math.max(...this.livros.map(l => l.codigo)) + 1;
+    //reduce percorre cada item do array comparando qual é maior e por fim incremena +1 no novo item/livro
+    const novoCodigo = this.livros.reduce((max, item) => (item.codigo > max ? item.codigo : max), 0) + 1;
     livro.codigo = novoCodigo;
     this.livros.push(livro);
   }

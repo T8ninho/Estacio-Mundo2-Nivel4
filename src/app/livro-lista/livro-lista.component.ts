@@ -9,6 +9,7 @@ import { ControleLivrosService } from '../controle-livros.service';
   templateUrl: './livro-lista.component.html',
   styleUrls: ['./livro-lista.component.css']
 })
+
 export class LivroListaComponent {
   public editoras: Array<Editora> = [];
   public livros: Array<Livro> = [];
