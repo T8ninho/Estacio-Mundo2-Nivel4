@@ -72,6 +72,6 @@ Verficação de Formulários
 Este repositório foi desenvolvido por
 |Autor|
 |----------------|
-| Antonio Vitor
+| Antonio Vitor |
 
 Para mais informação fique livre para entrar em contato `comigo`.
